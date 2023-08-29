@@ -1,0 +1,2 @@
+Write algorithms to perform following operations on a stack:
+File: s1.c

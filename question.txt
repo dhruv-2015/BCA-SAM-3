@@ -1,0 +1,27 @@
+LAB 1:
+[+] WAP to calculate area of circle
+File: 
+[+] WAP to find weather a number is odd or even
+File: 
+[+] WAP to detarmine whether the entered charactor is vowel or not
+File: 
+[+] WAP to detarmine whether a given number is prime or not 
+File: 
+
+LAB 2:
+[+] WAP to find factorial of a given number using loop
+File: DS/2.c
+[+] WAP to find power of a given number using loop
+File: 
+[+] WAP to find factors of a given number 
+File: DS/1.c
+
+LAB 3: 
+[+] WAP to calculate the factorial of given number (using recursion)
+File: 
+[+] WAP to calculate GCD of given two numbers (using recursion)
+File: 
+[+] WAP to calculate exp(x, y) (using recursion)
+File: 
+[+] WAP to print fibunacci series (using recursion)
+File: 

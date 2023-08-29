@@ -1,0 +1,7 @@
+LAB 2:
+[+] WAP to find factorial of a given number using loop
+File: factorial.c   DS/2.c
+[+] WAP to find power of a given number using loop
+File: 
+[+] WAP to find factors of a given number 
+File: factors.c  DS/1.c

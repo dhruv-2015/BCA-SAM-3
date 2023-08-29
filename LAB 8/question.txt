@@ -1,0 +1,5 @@
+[+] Show the process of reversing the list of given numbers {12, 34, 78, 23, 90, 67} using stack.
+File: 1.c
+
+[+] Write a program to reverse the list of given numbers using stack.
+File: 

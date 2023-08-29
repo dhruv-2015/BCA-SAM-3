@@ -1,0 +1,11 @@
+[+] Write a program to insert a number at a given location in an array.
+File: insersion.c
+
+[+] Write a program to delete a number from a given location in an array.
+File: delecion.c
+
+[+] Write a program to insert a number in an array that is already sorted in an ascending order.
+File: 
+
+[+] Write a program to delete a number from an array that is already sorted in an ascending order. 
+File: 

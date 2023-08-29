@@ -1,0 +1,11 @@
+[+] Write a program to merge two unsorted arrays.
+File: s1.c
+
+[+] Write a program to read and display a 3X3 Matrix.
+File: s2.c
+
+[+] Write a program to calculate and display sum to two mXn matrices.
+File: s3.c
+
+[+] Write a program two multiply two matrices.
+File: s4.c

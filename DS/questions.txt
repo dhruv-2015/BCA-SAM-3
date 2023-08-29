@@ -1,0 +1,12 @@
+1. wap to find factor of given numbers
+2. wap to find factorial of given numbers
+3. WAP to find sum of even number from 1d array
+4. WAP to find sumation of digit of given number (123 = 1+2+3 = 6)
+5. WAP to 
+    1
+    12
+    123
+    1234
+6. WAP to find total odd and even digit of given number
+7. WAP to find wather number is odd or even whithout using modulo operotar
+8. WAP to find a prime number between given range
