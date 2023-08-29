@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P3</title>
+</head>
+<body>
+    <script>
+        let len = 5;
+        document.write(getP3(len))
+        function getP3(len) {
+            let str = ""
+
+            for (let i = 0; i < len; i++) {
+                for (let j = 0; j < len - 1 - i; j++) {
+                    // str+="&nbsp;"
+                    str += "&nbsp;&nbsp;"
+                }
+                for (let k = 0; k < i + 1; k++) {
+                    str+="*"
+                }
+                str += "<br>"
+            }
+            return str;
+        }
+    </script>
+</body>
+</html>

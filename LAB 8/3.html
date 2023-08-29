@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+</head>
+<body>
+    <input type="number" id="v1"> + <input type="number" id="v2"> = <span id="ans"></span>
+    <br>
+    <button onclick="add()">Add</button>
+    <script>
+        function callmackDemo(v1, v2, ans) {
+            let l = v1 + v2;
+            // and some long logic
+            ans(l);
+        }
+
+        function add() {
+            const v1 = parseInt(document.getElementById("v1").value);
+            const v2 = parseInt(document.getElementById("v2").value);
+            callmackDemo(v1, v2, (ans) => {
+                document.getElementById("ans").innerText = ans;
+            });
+        }
+
+
+    </script>
+</body>
+</html>

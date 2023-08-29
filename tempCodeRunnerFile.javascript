@@ -1,0 +1,15 @@
+console.log(/[0-9\+\-\*\/]/.test("+"));
+console.log(/[0-9\+\-\*\/]/.test("*"));
+console.log(/[0-9\+\-\*\/]/.test("-"));
+console.log(/[0-9\+\-\*\/]/.test("/"));
+console.log(/[0-9\+\-\*\/]/.test("0"));
+console.log(/[0-9\+\-\*\/]/.test("1"));
+console.log(/[0-9\+\-\*\/]/.test("2"));
+console.log(/[0-9\+\-\*\/]/.test("3"));
+console.log(/[0-9\+\-\*\/]/.test("4"));
+console.log(/[0-9\+\-\*\/]/.test("5"));
+console.log(/[0-9\+\-\*\/]/.test("6"));
+console.log(/[0-9\+\-\*\/]/.test("7"));
+console.log(/[0-9\+\-\*\/]/.test("8"));
+console.log(/[0-9\+\-\*\/]/.test("9"));
+console.log(/[0-9\+\-\*\/]/.test("ો"));

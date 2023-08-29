@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="data"></div>
+    <script>
+        let string = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam cumque at distinctio cupiditate fugit, ipsa eum hic quis tempora laboriosam architecto ut eos, blanditiis autem, exercitationem ex neque eligendi ipsam."
+        //  charAt(),
+        // charCodeAt(), startsWith(), endsWith(), includes(), indexOf(), lastIndexOf(),
+        //     match(), repeat(), replace("", ""), search(), split(), substr(start, length),
+        //     substring(start, end), toString(), trim().
+
+        console.log("string: " + string);
+        console.log("charAt(6): " + string.charAt(6));
+        console.log("charCodeAt(5): " + string.charCodeAt(5));
+        console.log("startsWith(\"Lorem\"): " + string.startsWith("Lorem"));
+        console.log("endsWith(\"ipsam\"): " + string.endsWith("ipsam"));
+        console.log("includes(\"amet\"): " + string.includes("amet"));
+        console.log("indexOf(\"i\"): " + string.indexOf("i"));
+        console.log("lastIndexOf(\"x\"): " + string.lastIndexOf("x"));
+        console.log("match(/ipsum/): " + string.match(/ipsum/));
+        console.log("match(/ipsum0/): " + string.match(/ipsum0/));
+        console.log("repeat(2): " + string.repeat(2));
+        console.log("replace(\"ipsum\", \"Dhruv\"): " + string.replace("ipsum", "Dhruv"));
+        console.log("search(\"ipsum\"): " + string.search("ipsum"));
+        console.log("split(\" \"): " + string.split(" "));
+        console.log("substr(5, 10): " + string.substr(5, 10));
+        console.log("substring(5, 10): " + string.substring(5, 10));
+        let num = 1153464534;
+        console.log("num.toString(): " + num.toString());
+        let trm = "         hellllllllooooo Woooo         ";
+        console.log("trm.trim(): " + trm.trim());
+        console.log("trm.trimEnd(): " + trm.trimEnd());
+        console.log("trm.trimStart(): " + trm.trimStart());
+
+
+    </script>
+</body>
+
+</html>

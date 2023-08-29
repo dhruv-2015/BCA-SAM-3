@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter number" id="num" onkeyup="checkNum(this)">
+    <p id="ans"></p>
+    <script>
+        let timeout;
+        const checkNum = (e) => {
+            if (timeout) clearTimeout(timeout);
+            if (isNaN(num)) {
+                document.getElementById("ans").innerText = "Not a Number"
+            }
+            timeout = setTimeout(() => {
+                let num = parseInt(e.value);
+                document.getElementById("ans").innerText = `${num} ${checkArmstrong(num) ? "is armstrong" : "is not armstrong"}`
+            }, 1000)
+            
+        }
+        // console.log(checkArmstrong(num));
+        function checkArmstrong(num) {
+            let length = 0;
+            let temp = num;
+            while (temp != 0) {
+                temp = parseInt(temp / 10);
+                length++
+            }
+            
+            let sum =  0;
+            temp = num;
+            while (temp != 0) {
+                let tempsum = 1;
+                let tempnum = temp % 10;
+                for (let i = 0; i < length; i++) {
+                    tempsum *= tempnum;
+                }
+                sum+=tempsum;
+                tempsum
+                temp = parseInt(temp / 10);
+            }
+            return (sum == num) ? true : false
+        }
+    </script>
+</body>
+</html>

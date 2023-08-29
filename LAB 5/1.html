@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P1</title>
+</head>
+
+<body>
+    <!-- WAP to create an array of countries, read values of an array from user and print it. -->
+    <script>
+        // let arr = []
+        // let len = parseInt(prompt("Enter Array length: "));
+        // while (isNaN(len)) {
+        //     len = parseInt(prompt("Enter Array length in Numbers: "));
+        // }
+        // for (let i = 0; i < len; i++) {
+        //     arr.push(prompt(`Enter ${i+1}'s countrie: `));
+        // }
+        // document.write("countries: <br>");
+        // for (let i = 0; i < arr.length; i++) {
+        //     document.write(`${arr[i]} <br>`);
+
+        // }
+        let arr = [];
+        let i = 0;
+        while (true) {
+            arr[i] = prompt(`Enter ${i + 1}'s countrie (-1 for exit): `);
+            if (arr[i] == "-1") {
+                break;
+            }
+            i++;
+        }
+        document.write("countries: <br>");
+        for (let i = 0; i < arr.length - 1; i++) {
+            document.write(`${arr[i]} <br>`);
+
+        }
+    </script>
+</body>
+
+</html>

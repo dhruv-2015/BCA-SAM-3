@@ -1,0 +1,8 @@
+[+] MAKE the folling animation effects
+    - change background colar of a div from red to yellow 
+    - moving the div from left to right right to bottom bottom to left left to top 
+        - put the dealay of 2 second of the animation 
+        - change the animation itration count proparty to infinite 
+        - change animation diration to run in revarse order 
+        - change the value of animation timing function 
+[+] create a page using div tag and css proparty and also apply media query on it

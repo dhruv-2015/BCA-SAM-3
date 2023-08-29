@@ -1,0 +1,15 @@
+[+] 23. WAP to change background color on click of button.
+File: 1.html
+
+[+] 24. WAP for following effect: If the mouse is over heading, change font color to “red” and if the mouse goes out of the heading change it to “black”.
+File: 2.html
+
+[+] 25. WAP to print current date and time on click of “Date and Time” button.
+File: 3.html
+
+[+] 26. WAP to recognize which mouse event is fired.
+File: 4.html
+
+[+] 27. WAP to recognize which keyboard event is fired.
+File: 5.html
+

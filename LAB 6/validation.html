@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title> Student Registration Form </Title>
+</Head>
+
+<body>
+	<script>
+		function f(ww) {
+			let checkNumber = /^[0-9]+$/
+			let checkLatters = /^[a-zA-z\ ]+$/
+			// let checkEmail = /^[\\w-_\.]+@[\\w]+\.+$/g;
+			let checkEmail = /^[\w-\.]+@([\w-]+\.)+[\w]{2,4}$/
+			// /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+			let name = document.getElementById("fullname").value;
+			let email = document.getElementById("Email").value;
+			let MoNo = document.getElementById("MoNo").value;
+
+			if (!checkLatters.test(name)) {
+				alert("Name can only contain latters");
+				return;
+			}
+			if (!checkEmail.test(email)) {
+				alert("Enter valid email");
+				return;
+			}
+			if (!/[0-9]{10}/.test(MoNo)) {
+				alert("Enter valid Mobile number");
+				return;
+			}
+		}
+	</script>
+	<center>
+		<form onsubmit="f()" action="#" method="GET">
+			<table>
+				<tr>
+					<th colspan="2"> Student Registration </th>
+				</tr>
+				<tr>
+					<td> <label for="fullname"> Full Name </label></td>
+					<td> <input type="text" id="fullname" placeholder="Enter Your Name"></td>
+				</tr>
+				<tr>
+					<td> <label for="Email"> Email </label></td>
+					<td> <input type="text" id="Email" placeholder="Enter Your Email"></td>
+				</tr>
+				<tr>
+					<td> <label for="MoNo"> Mobile Number </label></td>
+					<td> <input type="number" id="MoNo" placeholder="Enter Your Mobile No."></td>
+				</tr>
+				<tr>
+					<td> <label for="address"> Address </label></td>
+					<td> <textarea id="address" cols="30" rows="5"></textarea></td>
+				</tr>
+				<tr>
+					<td> <label for="nationality"> Nationality </label></td>
+					<td> <input type="text" id="nationality" placeholder="Enter Your nationality"></td>
+				</tr>
+				<tr>
+					<td> <label for="dateofbirth"> Date Of Birth </label></td>
+					<td> <input type="date" id="dateofbirth"></td>
+				</tr>
+				<tr>
+					<td> <label> gender </label></td>
+					<td>
+						<input type="radio" name="gender" id="male" value="male">
+						<lable for="male"> Male </label>
+							<input type="radio" name="gender" id="female" value="female">
+							<lable for="female"> Female </label>
+					</td>
+				</tr>
+				<tr>
+					<td> <label for="higstdegree"> higst degree </label></td>
+					<td> <select id="higstdegree">
+							<option>BCA</option>
+							<option>BBA</option>
+						</select></td>
+				</tr>
+				<tr>
+					<td> <label for="CPI"> CPI </label></td>
+					<td> <input type="number" id="CPI" placeholder="Enter Your CPI"></td>
+				</tr>
+				<tr>
+					<td> <label for="uni"> university </label></td>
+					<td> <input type="text" id="uni" placeholder="Enter University"></td>
+				</tr>
+				<tr>
+					<td> <label for="passYear"> Passing year </label></td>
+					<td>
+						<select id="passYear">
+							<option>2020</option>
+							<option>2021</option>
+							<option>2022</option>
+							<option>2023</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<center>
+							<input type="submit" value="Submit">
+							<input type="button" value="Cancel">
+						</center>
+					</td>
+			</table>
+		</form>
+	</center>
+
+</body>
+
+</html>

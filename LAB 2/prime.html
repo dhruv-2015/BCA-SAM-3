@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter number" id="num" onkeyup="checkPrime(this)">
+    <p id="ans"></p>
+    <script>
+        let timeout;
+        const checkPrime = (e) => {
+            let num = parseInt(e.value);
+            if(timeout){
+                clearTimeout(timeout);
+            }
+            timeout = setTimeout(() => {
+                let isPrime = true;
+                for (let i = 2; i < num / 2; i++) {
+                    if (num % i == 0) {
+                        isPrime = false;
+                    }
+                }
+                document.getElementById("ans").innerText = `${num} is ${isPrime ? "" : "not "}prime`    
+            }, 1000);
+        }
+        
+        
+    </script>
+</body>
+</html>

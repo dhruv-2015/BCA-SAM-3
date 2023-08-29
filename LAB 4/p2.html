@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2</title>
+</head>
+
+<body>
+    <script>
+        let len = 5;
+        document.write(getP2(len))
+
+        function getP2(len) {
+            let str = ""
+            for (let i = 0; i < len; i++) {
+                for (let j = 0; j < len; j++) {
+
+                    //    str += (i == 0 || i == len -1) ? " * " : (j == 0 || j == len-1) ? " *" : "&nbsp;&nbsp;&nbsp;" 
+                    
+                    str += (i == 0 || i == len -1) ? "&nbsp;*&nbsp;" : (j == 0 || j == len-1) ? "&nbsp;*&nbsp;" : "&nbsp;&nbsp;&nbsp;&nbsp;" 
+                    // if (i == 0 || i == len - 1) {
+                    //     str += "*"
+                    // } else {
+                    //     if (j == 0 || j == len - 1) {
+                    //         str += "*"
+                    //     } else {
+                    //         str += "&nbsp;"
+                    //     }
+                    // }
+                }
+                str += "<br>"
+            }
+            return str
+        }
+    </script>
+</body>
+
+</html>

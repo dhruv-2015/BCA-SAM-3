@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .idk {
+            width: 500px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="idk" style="background-color: aqua" id="idkk"></div>
+    <button style="margin-top: 15px;" onclick="change()">Change Color</button>
+    <script>
+        function genHax() {
+            const haxx = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'a', 'b', 'c', 'd', 'e', 'f']
+            return `#${haxx[Math.floor(Math.random() * haxx.length)]}${haxx[Math.floor(Math.random() * haxx.length)]}${haxx[Math.floor(Math.random() * haxx.length)]}${haxx[Math.floor(Math.random() * haxx.length)]}${haxx[Math.floor(Math.random() * haxx.length)]}${haxx[Math.floor(Math.random() * haxx.length)]}`
+        }
+        function change() {
+            const colorss = ['aqua', 'aquamarine', 'azure', 'bisque', 'blanchedalmond', 'blueviolet', 'brown', 'burlywood', 'cadetblue']
+            let idk = document.getElementById("idkk");
+            idk.innerText = genHax();
+            idk.style.backgroundColor = idk.innerText;
+            // idk.style.backgroundColor = colorss[Math.floor(Math.random() * colorss.length)];
+        }
+        change()
+        setInterval(() => {
+            // change()
+        }, 300);
+    </script>
+</body>
+</html>

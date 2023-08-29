@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+</head>
+
+<body>
+    <input type="text" placeholder="Enter number" id="num" onkeyup="getFactorial(this)">
+    <p id="ans"></p>
+    <script>
+        let timeout;
+        const getFactorial = (e) => {
+            if (timeout) clearTimeout(timeout);
+
+            let num = parseInt(e.value);
+            let ans = 1;
+            timeout = setTimeout(() => {
+                if (isNaN(num)) {
+                    document.getElementById("ans").innerText = `Not a Number`
+                    return
+                }
+                data = FineFibu(num);
+                document.getElementById("ans").innerText = `Fibonacci of: ${num} is ${data}`
+            }, 1000);
+        }
+        
+        function FineFibu(num) {
+            let i, j, prev = 0, siri = [];
+            i = 1,
+            j = 0;
+            if (num == 1) {
+                return "0 + 1"
+                
+            }
+            while (i < num) {
+                siri.push(prev)
+                j = i
+                i = i + prev;
+                prev = j
+            }
+
+            return siri.join(" + ")
+
+        }
+
+    </script>
+</body>
+
+</html>

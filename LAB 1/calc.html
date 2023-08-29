@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let num1 = prompt("Enter First number: ");
+        num1 = Number(num1);
+        while (isNaN(num1)) {
+            num1 = prompt("Entered number is not number Enter First number: ");
+            num1 = Number(num1);
+        }
+
+        let num2 = prompt("Enter second number: ");
+        num2 = Number(num2);
+        while (isNaN(num2)) {
+            num2 = prompt("Entered number is not number Enter second number: ");
+            num2 = Number(num2);
+        }
+
+        let op = prompt("What you want to do: ");
+
+        while (!(op == "+" || op == "-" || op == "*" || op == "/")) {
+            op = prompt("You enter wrong What you want to do: ");
+        }
+
+        alert(`${num1} ${op} ${num2} = ${eval(num1 + op + num2)}`);
+
+    </script>
+</body>
+
+</html>

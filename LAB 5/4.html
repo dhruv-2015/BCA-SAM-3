@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- WAP to read an array from user and sort them in ascending order -->
+    <script>
+        let arr = [];
+        let n = parseInt(prompt("enter length for array: "));
+        while (isNaN(n)) {
+            n = parseInt(prompt("enter length for array in number: "));
+        }
+        for (let i = 0; i < n; i++) {
+            arr.push(prompt(`enter value for ${i + 1}'s element`))
+        }
+
+
+        function sortArr(arr, assanding = true) {
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = i; j < arr.length; j++) {
+                    
+                    if (assanding ? arr[i] > arr[j] : arr[i] < arr[j]) {
+                        let temp = arr[j];
+                        arr[j] = arr[i];
+                        arr[i] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        document.write(`Row array ${JSON.stringify(arr)} <br>`)
+        document.write(`Sprted array ${JSON.stringify(sortArr(arr, true))}`)
+
+
+
+
+        sortArr(arr, true)
+    </script>
+</body>
+
+</html>

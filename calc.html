@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <center>
+        <script>
+            let just = false;
+            function fac(i) {
+                if (i<=1) {
+                    return i
+                }
+                return i * fac(i - 1);
+            }
+
+            const exp = (e) => {
+                if (document.getElementById("exp").value == "") {
+                    document.getElementById("ans").innerText = "0"
+                    return;
+                }
+                try {
+                    let ex = document.getElementById("exp").value.replace("÷", "/")
+                    ex = ex.replace("x", "*")
+                    ex = ex.replace("X", "*")
+                    let sciVal = getSciKey()
+                    for (const key in sciVal) {
+                        if (Object.hasOwnProperty.call(sciVal, key)) {
+                            ex = ex.replace(key, sciVal[key])
+                        }
+                    }
+                    document.getElementById("ans").innerText = eval(ex)
+                    return document.getElementById("ans").innerText
+                } catch (error) {
+                    document.getElementById("ans").innerText = ""
+                    return ""
+                }
+            }
+
+            function getSciKey() {
+                let ex = document.getElementById("exp").value.replace("÷", ":::")
+                ex = ex.replace("/", ":::")
+                ex = ex.replace("*", ":::")
+                ex = ex.replace("x", ":::")
+                ex = ex.replace("X", ":::")
+                ex = ex.replace("+", ":::")
+                ex = ex.replace("+", ":::")
+                // 
+                ex = ex.replace("-", ":::")
+                let ep = ex.split(":::")
+                // console.log(ep);
+                let sciKeys = {}
+                for (let i = 0; i < ep.length; i++) {
+                    let element = ep[i];
+                    // console.log(element);
+                    if (element.startsWith("sin")) {
+                        element = element.replace("sin(", "")
+                        element = element.replace(")", "")
+                        // console.log(element);
+                        element = parseFloat(element);
+                        // console.log(element);
+                        sciKeys[ep[i]] = Math.sin(element * Math.PI / 180).toFixed(2);
+                    } else if (element.startsWith("cos")) {
+                        element = element.replace("cos(", "")
+                        element = element.replace(")", "")
+                        element = parseFloat(element);
+                        sciKeys[ep[i]] = Math.cos(element * Math.PI / 180).toFixed(2)
+                    } else if (element.startsWith("tan")) {
+                        element = element.replace("tan(", "")
+                        element = element.replace(")", "")
+                        element = parseFloat(element);
+                        sciKeys[ep[i]] = Math.tan(element * Math.PI / 180).toFixed(2);
+                    } else if (element.startsWith("log")) {
+                        element = element.replace("log(", "")
+                        element = element.replace(")", "")
+                        element = parseFloat(element);
+                        sciKeys[ep[i]] = Math.log(element * Math.PI / 180).toFixed(2);
+                    } else if (element.startsWith("√")) {
+                        element = element.replace("√", "")
+                        element = parseFloat(element);
+                        sciKeys[ep[i]] = Math.sqrt(element);
+                    } else if (element.endsWith("²")) {
+                        element = element.replace("²", "")
+                        element = parseFloat(element);
+                        sciKeys[ep[i]] = Math.pow(element, 2);
+                    } else if (element.endsWith("³")) {
+                        element = element.replace("³", "")
+                        element = parseFloat(element);
+                        sciKeys[ep[i]] = Math.pow(element, 3);
+                    } else if (element.endsWith("!")) {
+                        element = element.replace("!", "")
+                        element = parseFloat(element);
+                        sciKeys[ep[i]] = fac(element);
+                    }
+                }
+                return sciKeys;
+            }
+            function handelSomthig(e) {
+                let expval = document.getElementById("exp").value
+                if (expval == "0") {
+                    document.getElementById("exp").value = (e == "CE" || e == "C") ? "0" : e
+                    return
+                }
+                if (e == "C") {
+                    document.getElementById("exp").value = (expval.length != 1) ? expval.substring(0, expval.length - 1) : "0"
+                    just = false
+                    return
+
+                }
+                if (just) {
+                    document.getElementById("exp").value = (e == "CE") ? "0" : e
+                    just = false
+                } else {
+                    document.getElementById("exp").value = (e == "CE") ? "0" : expval + e
+                }
+                exp()
+            }
+            function sub() {
+                try {
+                    document.getElementById("exp").value = document.getElementById("ans").innerText
+                    document.getElementById("ans").innerText = ""
+                    just = true
+                } catch (error) {
+                    console.log(error);
+                    alert("Check Expression")
+                }
+            }
+            document.addEventListener("keyup", (e) => {
+                let focused = document.activeElement;
+                let input = document.getElementById("exp")
+                if (focused != input) {
+                    if (/[0-9\+\-\*\/\.\(\)]/.test(e.key)) {
+                        handelSomthig(e.key);
+                    } else if (e.key == "Enter") {
+                        sub()
+                    } else if (e.key == "Backspace") {
+                        let v = document.getElementById("exp").value
+                        document.getElementById("exp").value = (v.length != 1) ? v.substring(0, v.length - 1) : "0"
+                        exp()
+                    }
+                    
+                }
+
+            })
+        </script>
+        <div class="container">
+            <div class="col-3"></div>
+            <div class="col-6 mt-5">
+                <div class="row">
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col"> <input class="form-control" style="width: 100%; height: 105%;" type="text" placeholder="Enter values" pattern="[0-9\+\-\*\/]" onkeyup="exp(this)" value="0" id="exp"> </div>
+                        <div class="col-2"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig(this.innerText)"> <h3>C</h3> </button></div>
+                        <div class="col-2"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col"> <p style="width: 100%; height: 12px;">Ans: <span id="ans">0</span></p> </div>
+                        <div class="col-2"></div>
+                    </div>
+
+                    <div class="row my-2">
+                        <div class="col-2"></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig('sin(')"> <h3>sin</h3> </button></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig('cos(')"> <h3>cos</h3> </button></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig('tan(')"> <h3>tan</h3> </button></div>
+                        <div class="col-2"></div>
+                    </div>
+
+                    <div class="row my-2">
+                        <div class="col-2"></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig('log(')"> <h3>LOGe</h3> </button></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig('²')"> <h3>x<sup>2</sup></h3> </button></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig('³')"> <h3>x<sup>3</sup></h3> </button></div>
+                        <div class="col-2"></div>
+                    </div>
+
+                    <div class="row my-2">
+                        <div class="col-2"></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig('√')"> <h3>√x</h3> </button></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig('E')"> <h3>e</h3> </button></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig('!')"> <h3>x!</h3> </button></div>
+                        <div class="col-2"></div>
+                    </div>
+                    
+                    <div class="row my-2">
+                        <div class="col-2"></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig(this.innerText)"> <h3>(</h3> </button></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig(this.innerText)"> <h3>)</h3> </button></div>
+                        <div class="col-2"></div>
+                    </div>
+
+                    <div class="row my-2"></div>
+
+                    <div class="row my-2">
+                        <div class="col-2"></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig(this.innerText)"> <h3>+</h3> </button></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig(this.innerText)"> <h3>-</h3> </button></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig(this.innerText)"> <h3>CE</h3> </button></div>
+                        <div class="col-2"></div>
+                    </div>
+
+                    <div class="row my-2">
+                        <div class="col-2"></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig(this.innerText)"> <h3>x</h3> </button></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig(this.innerText)"> <h3>&#247;</h3> </button></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig(this.innerText)"> <h3>%</h3> </button></div>
+                        <div class="col-2"></div>
+                    </div>
+
+                    <div class="row my-2">
+                        <div class="col-2"></div>
+
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig(this.innerText)"> <h3>7</h3> </button></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig(this.innerText)"> <h3>8</h3> </button></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig(this.innerText)"> <h3>9</h3> </button></div>
+                        <div class="col-2"></div>
+
+                    </div>
+
+                    <div class="row my-2">
+                        <div class="col-2"></div>
+
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig(this.innerText)"> <h3>4</h3> </button></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig(this.innerText)"> <h3>5</h3> </button></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig(this.innerText)"> <h3>6</h3> </button></div>
+                        <div class="col-2"></div>
+
+                    </div>
+                    <div class="row my-2">
+                        <div class="col-2"></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig(this.innerText)"> <h3>1</h3> </button></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig(this.innerText)"> <h3>2</h3> </button></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig(this.innerText)"> <h3>3</h3> </button></div>
+                        <div class="col-2"></div>
+                    </div>
+
+
+                    <div class="row my-2">
+                        <div class="col-2"></div>
+                        <div class="col"><button class="btn btn-primary" style="width: 100%;" onclick="sub(this)"> <h3>=</h3> </button> </div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig(this.innerText)"> <h3>0</h3> </button></div>
+                        <div class="col"><button class="btn btn-secondary" style="width: 100%;" onclick="handelSomthig(this.innerText)"> <h3>.</h3> </button></div>
+                        <div class="col-2"></div>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </center>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

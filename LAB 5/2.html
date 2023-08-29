@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAX number</title>
+</head>
+<body>
+    <!--  WAP to read a numeric array from user and find maximum number from it. -->
+
+    <script>
+        let arr = [];
+        let i = 0;
+        while (true) {
+            let temp = parseInt(prompt(`Enter ${i+1}'s' number`));
+            while(isNaN(temp)){
+                temp = parseInt(prompt(`Please enter ${i+1}'s' number`));
+            }
+            if (temp == -1) {
+                break;
+            }
+            arr[i] = temp;
+            i++;
+        }
+
+        function max(arr) {
+            let max = arr[0];
+            for (let i = 1; i < arr.length; i++) {
+                const num = arr[i];
+                if (max < num) {
+                    max = num;
+                }
+            }
+            return max
+        }
+
+        document.write(`max: ${max(arr)}`)
+    </script>
+</body>
+</html>

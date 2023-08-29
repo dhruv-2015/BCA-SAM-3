@@ -1,0 +1,6 @@
+r = ""
+for i in range(100):
+    r += f"{i + 1} "
+
+
+print(r)

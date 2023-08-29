@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0 300px;
+    
+}
+.image {
+    background: rgb(42,46,235);
+    background: linear-gradient(90deg, rgba(42,46,235,1) 0%, rgba(217,31,134,1) 100%);
+}
+.left {
+    display: flex;
+    width: 30%;
+}
+.right {
+    width: 70%;
+}
+.image img {
+    width: fit-content;
+}

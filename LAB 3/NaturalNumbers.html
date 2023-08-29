@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Numbers</title>
+</head>
+
+<body>
+    <input type="text" placeholder="Enter number" id="num" onkeyup="checkPrime(this)">
+    <p id="ans"></p>
+    <script>
+        let timeout;
+        const checkPrime = (e) => {
+            if (timeout) clearTimeout(timeout);
+            let num = parseInt(e.value);
+            if (isNaN(num)) {
+                document.getElementById("ans").innerText = "Not a Number"
+            }
+            timeout = setTimeout(() => {
+                let ans = find(num);
+                document.getElementById("ans").innerText = ans
+            }, 1000)
+
+        }
+        function find(num) {
+            let sum = 0,
+            sumArr = [];
+            if (num <= 0) {
+                return "0";
+            }
+            for (let i = 1; i <= num; i++) {
+                sumArr.push(i)
+                sum += i;
+            }
+            return sumArr.join(" + ") + " = " + sum
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .con {
+            width: 500px;
+            height: 100px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con" id="conn"></div>
+
+    <script>
+        
+        document.addEventListener("keypress", (e) => {
+            name(e, "keypress")
+        })
+        document.addEventListener("keyup", (e) => {
+            name(e, "keyup")
+        })
+        document.addEventListener("keydown", (e) => {
+            name(e, "keydown")
+        })
+        function name(e, name) {
+            document.getElementById("conn").innerHTML = `event: ${name}<br> value: ${e.key}`
+        }
+    </script>
+</body>
+
+</html>

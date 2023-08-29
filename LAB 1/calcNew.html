@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc</title>
+</head>
+
+<body>
+    <input type="text" placeholder="Enter values" onkeyup="exp(this)" id="exp">
+    <p>ans: <span id="ans"></span></p>
+    <script>
+            const exp = (e) => {
+                try {
+                    document.getElementById("ans").innerText = e.value + " = " + eval(e.value)
+                } catch (error) {
+                    document.getElementById("ans").innerText = e.value + " = " + " - "
+                    
+                }
+            }
+    </script>
+</body>
+
+</html>

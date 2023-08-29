@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- WAP to demonstrate use of various inbuilt function on an array like push, pop, sort -->
+    <script>
+        let arr = [];
+        while (true) {
+            arr.push(prompt("enter value (-1 for exit)"));
+            if (arr[arr.length - 1] == "-1") {
+                break;
+            }
+
+        }
+        // document.write("Row array: " + arr + "<br>");
+        document.write(`Row array: ${JSON.stringify(arr)}<br>`);
+        arr.pop()
+
+        // document.write("pop array: " + arr + "<br>")
+        document.write(`pop array: ${JSON.stringify(arr)}<br>`)
+        arr.sort()
+        // document.write("sort array: " + arr + "<br>")
+            document.write(`sort array: ${JSON.stringify(arr)}<br>`)
+    </script>
+</body>
+
+</html>

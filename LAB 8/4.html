@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDK</title>
+</head>
+<body>
+    pass: <input type="password" id="pass"> <button onclick="change(this)">show</button>
+
+    <script>
+        function change(ele) {
+            if (ele.innerText == "show") {
+                ele.innerText = "hide";
+                document.getElementById('pass').type = "text"
+
+            } else {
+                ele.innerText = "show";
+                document.getElementById('pass').type = "password"
+            }
+
+        }
+    </script>
+</body>
+</html>

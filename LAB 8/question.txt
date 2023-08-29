@@ -1,0 +1,11 @@
+[+] 28. WAP to design a form using HTML and JavaScript that asks the user to enter his date of birth and on clicking the Calculate Button it calls the function that calculates how many days are left in your birthday.
+File: 1.html
+
+[+] 29. WAP to greet a user as per the current time. E.g. if anyone opens page at 08:00 amit should greet GOOD Morning.
+File: 2.html
+
+[+] 30. WAP to demonstrate callbacks in JavaScript.
+File: 3.html
+
+[+] 31. WAP to demonstrate change in properties of HTML element using JavaScript.
+File: 4.html

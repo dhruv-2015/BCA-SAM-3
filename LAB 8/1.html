@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> -->
+    <title>BOD Calc</title>
+</head>
+<body>
+    <input type="date" id="date">
+    <button onclick="checkBday()">check</button>
+    <br>
+    <span id="w"></span>
+
+    <script>
+        function checkBday() {
+            const Bdate = new Date(document.getElementById("date").value);
+            const adate = new Date();
+            Bdate.setFullYear(adate.getFullYear()) 
+            let diff = Bdate - adate
+            let al = document.getElementById("w")
+            if(Bdate.getDate() == adate.getDate()){
+                al.innerText = "Today is your birthday";
+            } else if (diff > 0) {
+                al.innerText = `${Math.ceil(diff / 1000 / 60 / 60 / 24)} days left in your birthday`;
+                console.log(Math.ceil(diff));
+            } else {
+                Bdate.setFullYear(adate.getFullYear() + 1); 
+                diff = Bdate - adate;
+                al.innerText = `${Math.ceil(diff / 1000 / 60 / 60 / 24)} days left in your birthday`;
+            }
+        }
+    </script>
+</body>
+</html>

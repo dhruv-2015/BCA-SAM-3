@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKk</title>
+</head>
+
+<body>
+
+    <input type="time" id="date">
+    <button onclick="check()">check</button>
+    <br>
+    <span id="w"></span>
+
+    <script>
+        function check() {
+            const adate = new Date();
+            let h = parseInt(document.getElementById("date").value.split(":")[0])
+            console.log(adate.getHours());
+            document.getElementById('w').innerText = `Good ${(h >= 20 && h < 5) ? "Night" : (h < 12) ? "Morning" : (h < 17) ? "Afternoon" : "Evening" }`;
+        }
+    </script>
+</body>
+</html>
+</html>

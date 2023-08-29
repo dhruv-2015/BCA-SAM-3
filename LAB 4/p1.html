@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P1</title>
+</head>
+
+<body>
+    <!-- <input type="text" name="" id="">
+    <p id="ans"></p> -->
+    <script>
+        // let timeout;
+        // const handel = ( {value} ) => {
+        //     if (timeout) clearTimeout(timeout)
+        //     let num = parseInt(value);
+        //     if (isNaN(num)) {
+        //         document.getElementById("ans").innerText =  `${num} is not number`
+        //     } else {
+        //         timeout = setTimeout(() => {
+        //             document.getElementById("ans").innerText = getP1(num);
+        //         }, 1000);
+        //     }
+        // }
+        // let len = 5;
+        document.write(getP1(5))
+        function getP1(len) {
+            let str = ""
+            for (let i = 0; i < len; i++) {
+                for (let j = 0; j < len; j++) {
+                    str += " * "
+                }
+                str += "<br>"
+            }
+            return str
+        }
+
+        document.write(str)
+    </script>
+</body>
+
+</html>

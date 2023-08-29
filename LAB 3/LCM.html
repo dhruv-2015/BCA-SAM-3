@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCD</title>
+</head>
+
+<body>
+    <input type="text" id="num1" placeholder="Enter Number 1" onkeyup="checkNum(this)">
+    <input type="text" id="num2" placeholder="Enter Number 2" onkeyup="checkNum(this)">
+    <p id="ans"></p>
+    <script>
+        let timeout;
+        const checkNum = () => {
+            let num2 = parseInt(document.getElementById("num2").value)
+            let num1 = parseInt(document.getElementById("num1").value)
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById("ans").innerText = `Not a number`
+            } else {
+                if (timeout) clearTimeout(timeout);
+                timeout = setTimeout(() => {
+                    document.getElementById("ans").innerText = `LCM of ${num1} and ${num2} is: ${getLCM(num1, num2)}`
+                }, 1000);
+            }
+        }
+        function getLCM(num1, num2) {
+            let min = num1 > num2 ? num1 : num2;
+            for (let i = 2; i <= min; i++) {
+                if (num1 % i == 0 && num2 % i == 0) {
+                    return i;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
