@@ -1,0 +1,15 @@
+[+] 36. WAP to check whether the given number is odd or even.
+File: oddOrEven.php
+
+[+] 37. WAP to check whether the given number is positive, negative or Zero.
+File: positiveNegativeOrZero.php
+
+[+] 38. WAP to print name of month based on given number of month (i.e. 1 -> January, 2 -> February…).
+File: nameOfMonth.php
+
+[+] 39. WAP to find greatest number from 3 number.
+File: greatestNumberFrom3Number.php
+
+[+] 40. WAP to check given number is palindrome or not.
+File: palindrome.php
+
