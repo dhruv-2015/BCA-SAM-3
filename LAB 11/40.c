@@ -1,3 +1,10 @@
+// 
+// 
+// simple queue
+// 
+// 
+// 
+
 #include <stdio.h>
 void qinsert(int val);
 int qremove();
